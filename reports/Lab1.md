@@ -1,131 +1,216 @@
+Lab1.R
+================
+v.yeshchenkov
+2019-11-04
+
+``` r
 ## Створити змінні базових (atomic) типів
- 
-int <- 1L<br/>
-double <- 2.5<br/>
-bool <- TRUE<br/>
-char <- "a"<br/>
-compl <- 1+1i<br/>
 
-int<br/>
-[1] 1<br/>
-class(int)<br/>
-[1] "integer"<br/>
+int <- 1L
+double <- 2.5
+bool <- TRUE
+char <- "a"
+compl <- 1+1i
 
-double<br/>
-[1] 2.5<br/>
-class(double)<br/>
-[1] "numeric"<br/>
+int
+```
 
-bool<br/>
-[1] TRUE<br/>
-class(bool)<br/>
-[1] "logical"<br/>
+    ## [1] 1
 
-char<br/>
-[1] "a"<br/>
-class(char)<br/>
-[1] "character"<br/>
- 
-compl<br/>
-[1] 1+1i<br/>
-class(compl)<br/>
-[1] "complex"<br/>
+``` r
+class(int)
+```
 
-## Створити вектори, які: містить послідовність з 5 до 75; містить числа 3.14, 2.71, 0, 13; 100 значень TRUE.
- 
-first <- c(5:75)<br/>
-second <- c(3.14, 2.71, 0, 13)<br/>
-third <- as.logical(c(1:100))<br/>
+    ## [1] "integer"
 
-first<br/>
- [1]  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43<br/>
-[40] 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75<br/>
-second<br/>
-[1]  3.14  2.71  0.00 13.00<br/>
-third<br/>
-  [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE<br/>
- [24] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE<br/>
- [47] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE<br/>
- [70] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE<br/>
- [93] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE<br/>
+``` r
+double
+```
 
+    ## [1] 2.5
+
+``` r
+class(double)
+```
+
+    ## [1] "numeric"
+
+``` r
+bool
+```
+
+    ## [1] TRUE
+
+``` r
+class(bool)
+```
+
+    ## [1] "logical"
+
+``` r
+char
+```
+
+    ## [1] "a"
+
+``` r
+class(char)
+```
+
+    ## [1] "character"
+
+``` r
+compl
+```
+
+    ## [1] 1+1i
+
+``` r
+class(compl)
+```
+
+    ## [1] "complex"
+
+``` r
+## Створити вектори, які: містить послідовність з 5 до 75; містить числа 3.14,
+## 2.71, 0, 13; 100 значень TRUE.
+
+first <- c(5:75)
+second <- c(3.14, 2.71, 0, 13)
+third <- as.logical(c(1:100))
+
+first
+```
+
+    ##  [1]  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+    ## [24] 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
+    ## [47] 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+    ## [70] 74 75
+
+``` r
+second
+```
+
+    ## [1]  3.14  2.71  0.00 13.00
+
+``` r
+third
+```
+
+    ##   [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+    ##  [15] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+    ##  [29] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+    ##  [43] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+    ##  [57] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+    ##  [71] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+    ##  [85] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+    ##  [99] TRUE TRUE
+
+``` r
 ## Створити наступну матрицю за допомогою matrix, та за допомогою cbind або rbind
- 
-matrix_vector <- c(0.5, 3.9,0,2,1.3,131,2.2, 7,3.5,2.8,4.6,5.1)<br/>
-first_matrix <- matrix(matrix_vector, ncol=3)<br/>
 
-first_matrix<br/>
-     [,1]  [,2] [,3]<br/>
-[1,]  0.5   1.3  3.5<br/>
-[2,]  3.9 131.0  2.8<br/>
-[3,]  0.0   2.2  4.6<br/>
-[4,]  2.0   7.0  5.1<br/>
+matrix_vector <- c(0.5, 3.9,0,2,1.3,131,2.2, 7,3.5,2.8,4.6,5.1)
+first_matrix <- matrix(matrix_vector, ncol=3)
+
+first_matrix
+```
+
+    ##      [,1]  [,2] [,3]
+    ## [1,]  0.5   1.3  3.5
+    ## [2,]  3.9 131.0  2.8
+    ## [3,]  0.0   2.2  4.6
+    ## [4,]  2.0   7.0  5.1
+
+``` r
 ## method 2
-first_row <- c(0.5, 1.3, 3.5)<br/>
-second_row <- c(3.9,131,2.8)<br/>
-third_row <- c(0,2.2,4.6)<br/>
-fourth_row <- c(2,7,5.1)<br/>
-second_matrix <- rbind(first_row,second_row,third_row,fourth_row)<br/>
+first_row <- c(0.5, 1.3, 3.5)
+second_row <- c(3.9,131,2.8)
+third_row <- c(0,2.2,4.6)
+fourth_row <- c(2,7,5.1)
+second_matrix <- rbind(first_row,second_row,third_row,fourth_row)
 
-second_matrix<br/>
-           [,1]  [,2] [,3]<br/>
-first_row   0.5   1.3  3.5<br/>
-second_row  3.9 131.0  2.8<br/>
-third_row   0.0   2.2  4.6<br/>
-fourth_row  2.0   7.0  5.1<br/>
+second_matrix
+```
+
+    ##            [,1]  [,2] [,3]
+    ## first_row   0.5   1.3  3.5
+    ## second_row  3.9 131.0  2.8
+    ## third_row   0.0   2.2  4.6
+    ## fourth_row  2.0   7.0  5.1
+
+``` r
 ## 4. Створити довільний список (list), в який включити всі базові типи.
 
-lst <- list("a", TRUE, 5L, 1.3, 1i)<br/>
+lst <- list("a", TRUE, 5L, 1.3, 1i)
 
-lst<br/>
-[[1]]<br/>
-[1] "a"<br/>
+lst
+```
 
-[[2]]<br/>
-[1] TRUE<br/>
+    ## [[1]]
+    ## [1] "a"
+    ## 
+    ## [[2]]
+    ## [1] TRUE
+    ## 
+    ## [[3]]
+    ## [1] 5
+    ## 
+    ## [[4]]
+    ## [1] 1.3
+    ## 
+    ## [[5]]
+    ## [1] 0+1i
 
-[[3]]<br/>
-[1] 5<br/>
-
-[[4]]<br/>
-[1] 1.3<br/>
-
-[[5]]<br/>
-[1] 0+1i<br/>
-
+``` r
 ## 5. Створити фактор з трьома рівнями «baby», «child», «adult».
 
-fctr <- factor(levels = c("baby", "child", "adult"))<br/>
+fctr <- factor(levels = c("baby", "child", "adult"))
 
-fctr<br/>
-factor(0)<br/>
-Levels: baby child adult<br/>
- ## 6. Знайти індекс першого значення NA в векторі 1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11. Знайти кількість значень NA.
- 
- vctr <- c(1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11)<br/>
- na_first_position <- min(which(is.na(vctr)))<br/>
- na_count <- sum(is.na(vctr))<br/>
- 
- na_first_position<br/>
-[1] 5<br/>
- na_count<br/>
-[1] 3<br/>
- 
- ## 7. Створити довільний data frame та вивести в консоль.
- 
- data_frame <- data.frame(first =(1:3), second=c(1i,2i,3i))<br/>
- data_frame<br/>
-  first second<br/>
-1     1   0+1i<br/>
-2     2   0+2i<br/>
-3     3   0+3i<br/>
- 
- ## 8. Змінити імена стовпців цього data frame.
- 
- colnames(data_frame) <- c("numeric", "complex")<br/>
- 
- data_frame<br/>
-  numeric complex<br/>
-1       1    0+1i<br/>
-2       2    0+2i<br/>
-3       3    0+3i<br/>
+fctr
+```
+
+    ## factor(0)
+    ## Levels: baby child adult
+
+``` r
+## 6. Знайти індекс першого значення NA в векторі 1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11. Знайти кількість значень NA.
+
+vctr <- c(1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11)
+na_first_position <- min(which(is.na(vctr)))
+na_count <- sum(is.na(vctr))
+
+na_first_position
+```
+
+    ## [1] 5
+
+``` r
+na_count
+```
+
+    ## [1] 3
+
+``` r
+## 7. Створити довільний data frame та вивести в консоль.
+
+data_frame <- data.frame(first =(1:3), second=c(1i,2i,3i))
+data_frame
+```
+
+    ##   first second
+    ## 1     1   0+1i
+    ## 2     2   0+2i
+    ## 3     3   0+3i
+
+``` r
+## 8. Змінити імена стовпців цього data frame.
+
+colnames(data_frame) <- c("numeric", "complex")
+
+data_frame
+```
+
+    ##   numeric complex
+    ## 1       1    0+1i
+    ## 2       2    0+2i
+    ## 3       3    0+3i
